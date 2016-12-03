@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: sgream
+      changes:
+        - createTable:
+            tableName: note
+            columns:
+              - column:
+                  name: note_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    - primaryKeyName: note_id_pk
+                    - primaryKey: true
+                    - nullable: false
+              - column:
+                  name: note_title
+                  type: varchar(1023)
+              - column:
+                  name: note_content
+                  type: te
