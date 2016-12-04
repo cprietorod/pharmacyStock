@@ -1,6 +1,42 @@
 databaseChangeLog:
   - changeSet:
       id: 1
-      author: Carlos Prieto
+      author: Carlos
       changes:
-        - empty: {}
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+              - column:
+                  name: type
+                  type: int
+              - column:
+                  name: amount_sold
+                  type: int
+              - column:
+                  name: min_stock
+                  type: int
+              - column:
+                  name: stock
+                  type: int   
+              - column:
+                  name: unit_price
+                  type: int
+  - changeSet:
+      id: 2
+      author: Carlos
+      changes:
+        - loadData:
+            encoding: UTF-8
+            file: db/changelog/products.csv
+            tableName: product
+ 
