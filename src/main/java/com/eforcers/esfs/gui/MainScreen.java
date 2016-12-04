@@ -19,9 +19,13 @@ import java.awt.Cursor;
 
 import javax.swing.Box;
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainScreen extends JFrame {
 
@@ -29,6 +33,7 @@ public class MainScreen extends JFrame {
 	private JPanel contentPane;
 	private JLabel lbReports;
 	private JLabel lbSales;
+	private JPanel workPanel;
 
 
 
@@ -62,6 +67,13 @@ public class MainScreen extends JFrame {
 		panel_1.setLayout(new MigLayout("", "[63px]", "[36px][36px][36px][36px][36px][36px][36px]"));
 		
 		lbSales = new JLabel("Ventas");
+		lbSales.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JPanel newWorkPanel = new SalesPanel();
+				setworkPanel(newWorkPanel);
+			}
+		});
 		lbSales.setFont(new Font("Apple Color Emoji", Font.PLAIN, 13));
 		lbSales.setForeground(new Color(255, 255, 255));
 		lbSales.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -71,6 +83,13 @@ public class MainScreen extends JFrame {
 		panel_1.add(verticalGlue, "cell 0 1,grow");
 		
 		JLabel lbStock = new JLabel("Inventario");
+		lbStock.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JPanel newWorkPanel = new StockPanel();
+				setworkPanel(newWorkPanel);
+			}
+		});
 		lbStock.setFont(new Font("Apple Color Emoji", Font.PLAIN, 13));
 		lbStock.setForeground(new Color(255, 255, 255));
 		lbStock.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -80,6 +99,13 @@ public class MainScreen extends JFrame {
 		panel_1.add(verticalGlue_1, "cell 0 3,grow");
 		
 		lbReports = new JLabel("Reportes");
+		lbReports.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JPanel newWorkPanel = new Report();
+				setworkPanel(newWorkPanel);
+			}
+		});
 		lbReports.setFont(new Font("Apple Color Emoji", Font.PLAIN, 13));
 		lbReports.setForeground(new Color(255, 255, 255));
 		lbReports.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -88,9 +114,18 @@ public class MainScreen extends JFrame {
 		Component verticalGlue_3 = Box.createVerticalGlue();
 		panel_1.add(verticalGlue_3, "cell 0 5,grow");
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(255, 255, 255));
-		contentPane.add(panel_2, BorderLayout.CENTER);
+		workPanel = new JPanel();
+		workPanel.setBackground(new Color(255, 255, 255));
+		contentPane.add(workPanel, BorderLayout.CENTER);
+	}
+	
+	private void setworkPanel(JPanel newComponent){
+		contentPane.remove(workPanel);
+		workPanel = newComponent;
+		contentPane.add(workPanel, BorderLayout.CENTER);
+		
+		contentPane.revalidate();
+		contentPane.repaint();
 	}
 
 }
