@@ -5,10 +5,16 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ApplicationContext;
+
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
 import java.awt.Component;
 import java.awt.Cursor;
+import java.awt.EventQueue;
 
 import javax.swing.Box;
 import javax.swing.ImageIcon;
@@ -18,19 +24,27 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class MainScreen extends JFrame {
+@org.springframework.stereotype.Component
+public class MainScreen extends JFrame implements CommandLineRunner{
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lbReports;
 	private JLabel lbSales;
 	private JPanel workPanel;
-
+	
+	@Autowired
+	private SalesPanel salesPanel;
+	
+	@Autowired
+	private ApplicationContext context;
+	
 
 
 	/**
 	 * Create the frame.
 	 */
+	
 	public MainScreen() {
 		setBackground(new Color(255, 255, 255));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,7 +75,10 @@ public class MainScreen extends JFrame {
 		lbSales.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JPanel newWorkPanel = new SalesPanel();
+				
+				
+				
+				JPanel newWorkPanel = salesPanel;
 				setworkPanel(newWorkPanel);
 			}
 		});
@@ -117,6 +134,20 @@ public class MainScreen extends JFrame {
 		
 		contentPane.revalidate();
 		contentPane.repaint();
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		EventQueue.invokeLater(new Runnable() {
+	        public void run() {
+	            try {
+	            	MainScreen frame = context.getBean(MainScreen.class);
+	                frame.setVisible(true);
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    });
 	}
 
 }

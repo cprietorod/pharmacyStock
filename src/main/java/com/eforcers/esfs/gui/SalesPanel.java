@@ -1,25 +1,35 @@
 package com.eforcers.esfs.gui;
 
 import javax.swing.JPanel;
-import javax.swing.JLabel;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.eforcers.esfs.dao.ProductsDAO;
+import com.eforcers.esfs.models.Product;
+import com.eforcers.esfs.models.ProductType;
+
 import java.util.Vector;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@Component
 public class SalesPanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTable table;
-	private JTable table_1;
 	private DefaultTableModel model;
 	private Vector<Vector<Object>> vectorModel;
+	
+	@Autowired
+	private ProductsDAO productsDAO;
 
 	/**
 	 * Create the panel.
@@ -91,17 +101,30 @@ public class SalesPanel extends JPanel {
 		
 		model = new DefaultTableModel(vectorModel, columnNames);
 		
-		table_1 = new JTable();
-		table_1.setSurrendersFocusOnKeystroke(true);
-		table_1.setRowSelectionAllowed(false);
-		table_1.setModel(model);
+		table = new JTable();
+		table.setSurrendersFocusOnKeystroke(true);
+		table.setRowSelectionAllowed(false);
+		table.setModel(model);
 		
 		Object rowData[] = { "Producto", "Cantidad"};
 		model.addRow(rowData);
 		
-		panel_1.add(table_1, BorderLayout.CENTER);
+		panel_1.add(table, BorderLayout.CENTER);
 		
 		JButton btnNewButton = new JButton("Vender");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Product product = new Product();
+				product.setUnitPrice(1);
+				product.setAmountSold(12);
+				product.setStock(12);
+				product.setMinStock(5);
+				product.setType(ProductType.analeptico);
+				product.setName("Test analeptico");
+				
+				productsDAO.save(product);
+			}
+		});
 		panel_1.add(btnNewButton, BorderLayout.SOUTH);
 
 	}
@@ -135,8 +158,8 @@ public class SalesPanel extends JPanel {
 		
 		vectorModel.add(vectorIndex,vectorRow);
 		
-		table_1.revalidate();
-		table_1.repaint();
+		table.revalidate();
+		table.repaint();
 	}
 
 }
