@@ -10,7 +10,6 @@ import com.eforcers.esfs.gui.MainScreen;
 public class EforcersStockFarmacySystemApplication {
 
 	public static void main(String[] args) {
-		//SpringApplication.run(EforcersStockFarmacySystemApplication.class, args);
 		new SpringApplicationBuilder(EforcersStockFarmacySystemApplication.class)
         .headless(false)
         .web(false)
