@@ -6,21 +6,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import java.awt.GridLayout;
 import net.miginfocom.swing.MigLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.Component;
 import java.awt.Cursor;
 
 import javax.swing.Box;
 import javax.swing.ImageIcon;
-import javax.swing.JComponent;
 
 import java.awt.Font;
 import java.awt.Color;
-import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
