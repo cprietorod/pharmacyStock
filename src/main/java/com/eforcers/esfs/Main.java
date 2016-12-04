@@ -7,16 +7,16 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import com.eforcers.esfs.gui.MainScreen;
 
 @SpringBootApplication
-public class EforcersStockFarmacySystemApplication {
+public class Main {
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(EforcersStockFarmacySystemApplication.class)
+		new SpringApplicationBuilder(Main.class)
         .headless(false)
         .web(false)
         .run(args);
 	}
 	
-	public EforcersStockFarmacySystemApplication(){
+	public Main(){
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
