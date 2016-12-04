@@ -30,7 +30,6 @@ public class Product {
 		}else{
 			throw new Exception("out of stock");
 		}
-		
 	}
 	
 	
