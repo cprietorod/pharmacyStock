@@ -12,6 +12,7 @@ import com.eforcers.esfs.models.ProductType;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
+import org.junit.BeforeClass;;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -25,6 +26,10 @@ public class EforcersStockFarmacySystemApplicationTests {
 	@Autowired
 	private ProductsDAO productsDAO;
     
+	@BeforeClass
+    public static void setupHeadlessMode() {
+		System.setProperty("java.awt.headless", "false");
+    }
     
 	@Before 
     public void initialize() {
