@@ -1,0 +1,7 @@
+name,type,amount_sold,min_stock,stock,unit_price
+producto nn 1,1,0,3,12,50
+producto nn 2,1,0,3,12,50
+producto nn 3,1,0,3,12,50
+producto nn 4,1,0,3,12,50
+producto nn 5,1,0,3,12,50
+producto nn 6,1,0,3,12,50
