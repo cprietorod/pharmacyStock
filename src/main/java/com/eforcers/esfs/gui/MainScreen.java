@@ -46,7 +46,7 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 	public MainScreen() {
 		setBackground(new Color(255, 255, 255));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 682, 537);
+		setBounds(100, 100, 794, 537);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
