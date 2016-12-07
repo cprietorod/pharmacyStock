@@ -63,9 +63,9 @@ public class SalesPanel extends JPanel {
 		panel.add(panel_2, "cell 0 0,grow");
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{0, 0, 0};
-		gbl_panel_2.rowHeights = new int[]{0, 0, 0};
+		gbl_panel_2.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_panel_2.columnWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_2.setLayout(gbl_panel_2);
 		
 		JLabel lblprod1 = new JLabel(products.get(0).getName());
@@ -82,10 +82,18 @@ public class SalesPanel extends JPanel {
 				addProduct(products.get(0));
 			}
 		});
+		
+		JLabel lblPrice = new JLabel("$"+products.get(0).getUnitPrice());
+		GridBagConstraints gbc_lblPrice = new GridBagConstraints();
+		gbc_lblPrice.gridwidth = 2;
+		gbc_lblPrice.insets = new Insets(0, 0, 5, 5);
+		gbc_lblPrice.gridx = 0;
+		gbc_lblPrice.gridy = 1;
+		panel_2.add(lblPrice, gbc_lblPrice);
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
 		gbc_btnNewButton_1.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_1.gridx = 0;
-		gbc_btnNewButton_1.gridy = 1;
+		gbc_btnNewButton_1.gridy = 2;
 		panel_2.add(btnNewButton_1, gbc_btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("-");
@@ -96,16 +104,16 @@ public class SalesPanel extends JPanel {
 		});
 		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
 		gbc_btnNewButton_2.gridx = 1;
-		gbc_btnNewButton_2.gridy = 1;
+		gbc_btnNewButton_2.gridy = 2;
 		panel_2.add(btnNewButton_2, gbc_btnNewButton_2);
 		
 		JPanel lblprod2 = new JPanel();
 		panel.add(lblprod2, "cell 1 0,grow");
 		GridBagLayout gbl_lblprod2 = new GridBagLayout();
 		gbl_lblprod2.columnWidths = new int[]{0, 0, 0};
-		gbl_lblprod2.rowHeights = new int[]{0, 0, 0};
+		gbl_lblprod2.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_lblprod2.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		gbl_lblprod2.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_lblprod2.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		lblprod2.setLayout(gbl_lblprod2);
 		
 		JLabel label = new JLabel(products.get(1).getName());
@@ -122,10 +130,18 @@ public class SalesPanel extends JPanel {
 				addProduct(products.get(1));
 			}
 		});
+		
+		JLabel lblNewLabel_4 = new JLabel("$"+products.get(1).getUnitPrice());
+		GridBagConstraints gbc_lblNewLabel_4 = new GridBagConstraints();
+		gbc_lblNewLabel_4.gridwidth = 2;
+		gbc_lblNewLabel_4.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_4.gridx = 0;
+		gbc_lblNewLabel_4.gridy = 1;
+		lblprod2.add(lblNewLabel_4, gbc_lblNewLabel_4);
 		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
 		gbc_btnNewButton_3.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_3.gridx = 0;
-		gbc_btnNewButton_3.gridy = 1;
+		gbc_btnNewButton_3.gridy = 2;
 		lblprod2.add(btnNewButton_3, gbc_btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("-");
@@ -136,16 +152,16 @@ public class SalesPanel extends JPanel {
 		});
 		GridBagConstraints gbc_btnNewButton_4 = new GridBagConstraints();
 		gbc_btnNewButton_4.gridx = 1;
-		gbc_btnNewButton_4.gridy = 1;
+		gbc_btnNewButton_4.gridy = 2;
 		lblprod2.add(btnNewButton_4, gbc_btnNewButton_4);
 		
 		JPanel panel_3 = new JPanel();
 		panel.add(panel_3, "cell 2 0,grow");
 		GridBagLayout gbl_panel_3 = new GridBagLayout();
 		gbl_panel_3.columnWidths = new int[]{0, 0, 0};
-		gbl_panel_3.rowHeights = new int[]{0, 0, 0};
+		gbl_panel_3.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_panel_3.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_3.setLayout(gbl_panel_3);
 		
 		JLabel lblNewLabel = new JLabel(products.get(2).getName());
@@ -162,10 +178,18 @@ public class SalesPanel extends JPanel {
 				addProduct(products.get(2));
 			}
 		});
+		
+		JLabel lblNewLabel_5 = new JLabel("$"+products.get(2).getUnitPrice());
+		GridBagConstraints gbc_lblNewLabel_5 = new GridBagConstraints();
+		gbc_lblNewLabel_5.gridwidth = 2;
+		gbc_lblNewLabel_5.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5.gridx = 0;
+		gbc_lblNewLabel_5.gridy = 1;
+		panel_3.add(lblNewLabel_5, gbc_lblNewLabel_5);
 		GridBagConstraints gbc_btnNewButton_6 = new GridBagConstraints();
 		gbc_btnNewButton_6.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_6.gridx = 0;
-		gbc_btnNewButton_6.gridy = 1;
+		gbc_btnNewButton_6.gridy = 2;
 		panel_3.add(btnNewButton_6, gbc_btnNewButton_6);
 		
 		JButton btnNewButton_5 = new JButton("-");
@@ -176,22 +200,22 @@ public class SalesPanel extends JPanel {
 		});
 		GridBagConstraints gbc_btnNewButton_5 = new GridBagConstraints();
 		gbc_btnNewButton_5.gridx = 1;
-		gbc_btnNewButton_5.gridy = 1;
+		gbc_btnNewButton_5.gridy = 2;
 		panel_3.add(btnNewButton_5, gbc_btnNewButton_5);
 		
 		JPanel panel_4 = new JPanel();
 		panel.add(panel_4, "cell 0 1,grow");
 		GridBagLayout gbl_panel_4 = new GridBagLayout();
 		gbl_panel_4.columnWidths = new int[]{0, 0, 0};
-		gbl_panel_4.rowHeights = new int[]{0, 0, 0};
+		gbl_panel_4.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_panel_4.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_4.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_4.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_4.setLayout(gbl_panel_4);
 		
 		JLabel lblNewLabel_1 = new JLabel(products.get(3).getName());
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.gridwidth = 2;
-		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 0);
 		gbc_lblNewLabel_1.gridx = 0;
 		gbc_lblNewLabel_1.gridy = 0;
 		panel_4.add(lblNewLabel_1, gbc_lblNewLabel_1);
@@ -202,10 +226,18 @@ public class SalesPanel extends JPanel {
 				addProduct(products.get(3));
 			}
 		});
+		
+		JLabel lblNewLabel_6 = new JLabel("$"+products.get(3).getUnitPrice());
+		GridBagConstraints gbc_lblNewLabel_6 = new GridBagConstraints();
+		gbc_lblNewLabel_6.gridwidth = 2;
+		gbc_lblNewLabel_6.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_6.gridx = 0;
+		gbc_lblNewLabel_6.gridy = 1;
+		panel_4.add(lblNewLabel_6, gbc_lblNewLabel_6);
 		GridBagConstraints gbc_btnNewButton_7 = new GridBagConstraints();
 		gbc_btnNewButton_7.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_7.gridx = 0;
-		gbc_btnNewButton_7.gridy = 1;
+		gbc_btnNewButton_7.gridy = 2;
 		panel_4.add(btnNewButton_7, gbc_btnNewButton_7);
 		
 		JButton btnNewButton_8 = new JButton("-");
@@ -216,22 +248,22 @@ public class SalesPanel extends JPanel {
 		});
 		GridBagConstraints gbc_btnNewButton_8 = new GridBagConstraints();
 		gbc_btnNewButton_8.gridx = 1;
-		gbc_btnNewButton_8.gridy = 1;
+		gbc_btnNewButton_8.gridy = 2;
 		panel_4.add(btnNewButton_8, gbc_btnNewButton_8);
 		
 		JPanel panel_5 = new JPanel();
 		panel.add(panel_5, "cell 1 1,grow");
 		GridBagLayout gbl_panel_5 = new GridBagLayout();
 		gbl_panel_5.columnWidths = new int[]{0, 0, 0};
-		gbl_panel_5.rowHeights = new int[]{0, 0, 0};
+		gbl_panel_5.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_panel_5.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_5.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_5.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_5.setLayout(gbl_panel_5);
 		
 		JLabel lblNewLabel_2 = new JLabel(products.get(4).getName());
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
 		gbc_lblNewLabel_2.gridwidth = 2;
-		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 0);
 		gbc_lblNewLabel_2.gridx = 0;
 		gbc_lblNewLabel_2.gridy = 0;
 		panel_5.add(lblNewLabel_2, gbc_lblNewLabel_2);
@@ -242,10 +274,18 @@ public class SalesPanel extends JPanel {
 				addProduct(products.get(4));
 			}
 		});
+		
+		JLabel lblNewLabel_7 = new JLabel("$"+products.get(4).getUnitPrice());
+		GridBagConstraints gbc_lblNewLabel_7 = new GridBagConstraints();
+		gbc_lblNewLabel_7.gridwidth = 2;
+		gbc_lblNewLabel_7.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_7.gridx = 0;
+		gbc_lblNewLabel_7.gridy = 1;
+		panel_5.add(lblNewLabel_7, gbc_lblNewLabel_7);
 		GridBagConstraints gbc_btnNewButton_9 = new GridBagConstraints();
 		gbc_btnNewButton_9.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_9.gridx = 0;
-		gbc_btnNewButton_9.gridy = 1;
+		gbc_btnNewButton_9.gridy = 2;
 		panel_5.add(btnNewButton_9, gbc_btnNewButton_9);
 		
 		JButton btnNewButton_10 = new JButton("-");
@@ -256,22 +296,22 @@ public class SalesPanel extends JPanel {
 		});
 		GridBagConstraints gbc_btnNewButton_10 = new GridBagConstraints();
 		gbc_btnNewButton_10.gridx = 1;
-		gbc_btnNewButton_10.gridy = 1;
+		gbc_btnNewButton_10.gridy = 2;
 		panel_5.add(btnNewButton_10, gbc_btnNewButton_10);
 		
 		JPanel panel_6 = new JPanel();
 		panel.add(panel_6, "cell 2 1,grow");
 		GridBagLayout gbl_panel_6 = new GridBagLayout();
 		gbl_panel_6.columnWidths = new int[]{0, 0, 0};
-		gbl_panel_6.rowHeights = new int[]{0, 0, 0};
+		gbl_panel_6.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_panel_6.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_6.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_6.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_6.setLayout(gbl_panel_6);
 		
 		JLabel lblNewLabel_3 = new JLabel(products.get(5).getName());
 		GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
 		gbc_lblNewLabel_3.gridwidth = 2;
-		gbc_lblNewLabel_3.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_3.insets = new Insets(0, 0, 5, 0);
 		gbc_lblNewLabel_3.gridx = 0;
 		gbc_lblNewLabel_3.gridy = 0;
 		panel_6.add(lblNewLabel_3, gbc_lblNewLabel_3);
@@ -282,10 +322,18 @@ public class SalesPanel extends JPanel {
 				addProduct(products.get(5));
 			}
 		});
+		
+		JLabel lblNewLabel_8 = new JLabel("$"+products.get(5).getUnitPrice());
+		GridBagConstraints gbc_lblNewLabel_8 = new GridBagConstraints();
+		gbc_lblNewLabel_8.gridwidth = 2;
+		gbc_lblNewLabel_8.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_8.gridx = 0;
+		gbc_lblNewLabel_8.gridy = 1;
+		panel_6.add(lblNewLabel_8, gbc_lblNewLabel_8);
 		GridBagConstraints gbc_btnNewButton_11 = new GridBagConstraints();
 		gbc_btnNewButton_11.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_11.gridx = 0;
-		gbc_btnNewButton_11.gridy = 1;
+		gbc_btnNewButton_11.gridy = 2;
 		panel_6.add(btnNewButton_11, gbc_btnNewButton_11);
 		
 		JButton btnNewButton_12 = new JButton("-");
@@ -296,7 +344,7 @@ public class SalesPanel extends JPanel {
 		});
 		GridBagConstraints gbc_btnNewButton_12 = new GridBagConstraints();
 		gbc_btnNewButton_12.gridx = 1;
-		gbc_btnNewButton_12.gridy = 1;
+		gbc_btnNewButton_12.gridy = 2;
 		panel_6.add(btnNewButton_12, gbc_btnNewButton_12);
 		
 		JPanel panel_1 = new JPanel();
