@@ -37,6 +37,9 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 	private SalesPanel salesPanel;
 	
 	@Autowired
+	private StockPanel stockPanel;
+	
+	@Autowired
 	private ApplicationContext context;
 	
 	/**
@@ -89,7 +92,7 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 		lbStock.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JPanel newWorkPanel = new StockPanel();
+				JPanel newWorkPanel = stockPanel;
 				setworkPanel(newWorkPanel);
 			}
 		});
