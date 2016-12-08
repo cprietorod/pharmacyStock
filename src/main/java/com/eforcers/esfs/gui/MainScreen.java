@@ -93,6 +93,7 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JPanel newWorkPanel = stockPanel;
+				stockPanel.init();
 				setworkPanel(newWorkPanel);
 			}
 		});
