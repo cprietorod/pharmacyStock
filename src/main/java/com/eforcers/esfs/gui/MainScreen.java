@@ -34,10 +34,10 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 	private JPanel workPanel;
 	
 	@Autowired
-	private SalesPanel salesPanel;
+	private StockPanel stockPanel;
 	
 	@Autowired
-	private StockPanel stockPanel;
+	private Report report;
 	
 	@Autowired
 	private ApplicationContext context;
@@ -45,8 +45,8 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 	/**
 	 * Create the frame.
 	 */
-	
-	public MainScreen() {
+	@Autowired
+	public MainScreen(SalesPanel salesPanel) {
 		setBackground(new Color(255, 255, 255));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 794, 537);
@@ -77,6 +77,7 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JPanel newWorkPanel = salesPanel;
+				salesPanel.init("");
 				setworkPanel(newWorkPanel);
 			}
 		});
@@ -109,7 +110,8 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 		lbReports.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JPanel newWorkPanel = new Report();
+				JPanel newWorkPanel = report;
+				report.init();
 				setworkPanel(newWorkPanel);
 			}
 		});
@@ -121,8 +123,7 @@ public class MainScreen extends JFrame implements CommandLineRunner{
 		Component verticalGlue_3 = Box.createVerticalGlue();
 		panel_1.add(verticalGlue_3, "cell 0 5,grow");
 		
-		workPanel = new JPanel();
-		workPanel.setBackground(new Color(255, 255, 255));
+		workPanel = salesPanel;
 		contentPane.add(workPanel, BorderLayout.CENTER);
 	}
 	

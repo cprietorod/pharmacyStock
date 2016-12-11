@@ -14,6 +14,7 @@ import com.eforcers.esfs.models.Product;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
@@ -74,6 +75,7 @@ public class StockPanel extends JPanel {
 	 */
 	@Autowired
 	public StockPanel(ProductsDAO productsDAO) {
+		this.setBackground(new Color(255, 255, 255));
 		this.productsDAO = productsDAO;
 		
 		setLayout(new MigLayout("", "[63px][grow][grow]", "[16px][][][][][][][]"));
@@ -157,6 +159,7 @@ public class StockPanel extends JPanel {
 				product = products.get(0);
 				product.setMinStock(Integer.parseInt(txtMin0.getText()));
 				product.setStock(Integer.parseInt(txtAm0.getText()));
+				productsDAO.save(product);
 				
 				product = products.get(1);
 				product.setMinStock(Integer.parseInt(txtMin1.getText()));

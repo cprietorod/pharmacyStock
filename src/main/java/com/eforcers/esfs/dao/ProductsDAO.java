@@ -12,4 +12,6 @@ import com.eforcers.esfs.models.Product;
  */
 public interface ProductsDAO extends CrudRepository<Product, Integer> {
 	Product findOneByName(String name);
+	List<Product> findAllByOrderByAmountSoldDesc();
+	List<Product> findAllByOrderByAmountSoldAsc();
 }
